@@ -1,0 +1,48 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+   HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+
+@import "./catppuccin.css";
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+body {
+  background-color: var(--ctp-macchiato-base);
+  color: var(--ctp-macchiato-text);
+  font-family: Verdana;
+}
+
+.header,
+.footer {
+  background: var(--ctp-macchiato-crust);
+  border: 0.25em double var(--ctp-macchiato-overlay0);
+}
+
+.header>ul,
+.footer>ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  color: var(--ctp-macchiato-sky);
+}
+
+.header>ul>li,
+.footer>ul>li {
+  padding: 0.5em;
+}
+
+.main {
+  margin: 0 auto;
+  border: 0.25em double var(--ctp-macchiato-overlay0);
+  padding: 0 1vw;
+  width: 50vw;
+  background: var(--ctp-macchiato-surface0);
+  display: flex;
+  flex-direction: column;
+  font-family: Quicksand;
+}
+
+.main>h1 {
+  text-align: center;
+  color: var(--ctp-macchiato-sky);
+}
