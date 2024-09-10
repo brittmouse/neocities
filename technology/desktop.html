@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brittmouse | Finally Having a Desktop</title>
+    <link href="../styles/normalize.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../styles/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+
+  <body>
+    <div class="header">
+      <ul>
+        <li><a href="../index.html">Brittmouse</a></li>
+        <li><a href="./index.html">About</a></li>
+        <li>Links</li>
+        <li><a href="../index/index.html">Index</a></li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <article>
+        <h1>Finally Having a Desktop</h1>
+        <time datetime="2024/09/09"><i>September 9, 2024</i></time>
+        <h2>A Bit Of Background</h2>
+        <p>I was a laptop-only user for probably 10 years. My old desktop was running Windows XP back when Windows 8 was
+          new. I don't remember much from that time but I do remember playing Space Cadet Pinball a lot. I skipped past
+          Vista and 7, staying on XP until my uncle passed away and I got his Dell Inspiron gaming laptop running a
+          Windows 8. It was a major step up in computing power and it has stayed with me for the past ten years, loaded
+          down with schoolwork from middle school on to college, multiple games, and a Modding folder for Fallout 4
+          larger than the game itself.</p>
+        <p>However, after graduating college, I was strapped for cash after spending about $300 dollars of my graduation
+          money on a refurbished Lenovo IdeaPad. I was stuck with the Inspiron and its age was showing. 8 GB of RAM, a
+          ten-year-old SSD, and a NVidia GTX 1050 Ti were just not enough to be playing things like Fallout 4, or
+          even editing papers in Word (this is the reason I switched to Google Docs and LibreOffice on that machine).
+          Even after upgrading the RAM, it wasn't enough. So I decided to finally get a desktop machine.</p>
+
+        <h2>Decisions, Decisions</h2>
+        <p>As much as I like the freedom that a laptop provides, I have a pretty crappy IdeaPad 3 that was not enough to
+          satisfy my wants. While it can run games like Star Wars: Battlefront II (2005) and Minecraft Java well enough,
+          it was not enough to play anything more taxing than that at any reasonable speed. War Thunder felt like
+          driving a stuttering snail instead of playing the game even at the lowest quality setting.</p>
+        <p>So I wanted a desktop machine, but how was I going to go about choosing one? I had a few requirements.</p>
+        <ol>
+          <li>Small enough to fit at my desk without hogging space or getting in the way of anything.</li>
+          <li>Something powerful enough to play games like Fallout 4 and War Thunder.</li>
+          <li>An AMD machine.</li>
+          <li>Linux support (whether pre-loaded or my own decision).</li>
+          <li>Something I could program on if I decided to go hard into building Rust or something.</li>
+          <li>Preferred: from a smaller manufacturer instead of a major company like Dell or HP.</li>
+        </ol>
+        <p>That gets you a pretty narrow list. Essentially I was choosing from 1 of 3 manufacturers: System76,
+          Minisforum, and Slimbook. Specifically, I was looking at the Slimbook One, the System76 Meerkat, and the
+          Minisforum UM790 Pro. The System76 Meerkat uses a 13-gen Intel chip, with i3-1315U, i5-1340P, and i7-1360P
+          offerings. I'm pretty glad I didn't get that after the debacle with the 13th and 14th-gen Intel chips, and
+          while Pop!_OS is great and widely loved, I had been using Linux Mint for nearly a year and I liked Cinnamon
+          far more than GNOME. Slimbook's offer was interesting but I ultimately went for the Minisforum UM790 Pro.</p>
+        <p>The Ryzen 9 7940HS is a really good processor, and it's very fast when compiling Rust binaries or playing
+          games. It also comes with integrated Radeon 780M graphics, which manages to handle Fallout 4 and War Thunder
+          pretty well, although it's not as smooth as I'd like. The games run fast enough for playing, but I've seen it
+          struggle a lot when rendering foliage, so the wilderness areas of the Commonwealth and grasslands maps on War
+          Thunder can slow the refresh rate down a lot. I would not trust this to play something like Doom Eternal or
+          Cyberpunk well without an eGPU, which I may get in the future.</p>
+
+        <h2>Up and Running</h2>
+        <p>After saving up enough money from my job, I bought the barebones version of the UM790 Pro off Amazon while it
+          was on sale, meaning I saved a ton getting this. I also went to MicroCenter and got 24 GB of DDR5-5600, a 1 TB
+          SSD, and a budget 21.5" 1080p 60Hz monitor. Again, I am space limited, and paying something like 500 bucks for
+          a 2K screen that would look massive in my room felt like overkill. The RAM and SSD came from Crucial, the
+          same company I used to upgrade my Inspiron's RAM from 8 GB to <em>32</em> GB.</p>
+        <p>Setup wasn't difficult as I imagined, largely because I didn't have to assemble a tower with a motherboard,
+          CPU, GPU, etc.; I just had to insert the SSD and RAM. (Not that building a tower would be that difficult, I
+          just haven't done it before.)</p>
+        <p>The most annoying part of setting up the PC was getting Linux working right, and that's enitrely a skill
+          issue on my part. I've used Linux Mint for a long time on the IdeaPad but I decided for the desktop I would
+          use EndeavourOS, an Arch-based distro with an easy install via Calamares and a great colorscheme. I used this
+          for about a week but for whatever reason I decided that I wanted to try a vanilla Arch install. While I did it
+          correctly with the GNOME install, I don't like GNOME so I tried redoing the manual install (via SSH from my
+          Ideapad) with Plasma 6, which I managed to mess up (again, skill issue). So I tried again with
+          <code>archinstall</code> and while it installed correctly, I eventually gave up on it and just installed Mint
+          on it. Mint hasn't been flawless but it's been a lot less of a headache for gaming, modding, and day-to-day
+          stuff. I would love to try Arch or EndeavourOS again but I'm sticking with Mint for the time being.</p>
+
+        <h2>Gaming And Modding</h2>
+        <p>The <em>real</em> hassle has been modding Fallout 4. You'll recall that I got this because I wanted to run
+          Fallout 4. Well I play Fallout 4 like any sane individual - modded out the ass. Vanilla FO4 is buggy, ugly,
+          and has some of the worst weapon design I've ever seen. While I generally keep default clothes for settlers
+          and all because I don't hate the aesthetic entirely, I mod in tons of weapons, armors, ammos, and gameplay
+          changes like <a href="https://www.nexusmods.com/fallout4/mods/66071">True Damage</a> and
+          <a href="https://www.nexusmods.com/fallout4/mods/68655">Hardcore Health Overhaul</a>. I had both
+          hyper-realistic and lore-friendly weapon mods on the laptop, but for the desktop I've stuck with the more
+          lore-friendly weapon mods from the likes of <a
+            href="https://next.nexusmods.com/profile/DegenerateDak/mods?gameId=1151">Dak</a> and <a
+            href="https://next.nexusmods.com/profile/CSEPteam/about-me?gameId=1151">the CSEP team</a>. Combined with
+          True Damage and <a href="https://www.nexusmods.com/fallout4/mods/66051">Munitions</a>, both myself and my
+          enemies are a lot easier to kill, and I enjoy that over bullet sponges.</p>
+        <p>However, modding on <em>Linux</em> has been a hassle and a half. Mod Organizer 2, which is the mod manager I
+          use for Fallout 4 (and New Vegas on the gaming laptop, so help me I will get that working), is not meant to
+          work on Linux at all. Their webpage has a section about adding Linux support and the answer is "Stop using a
+          non-gaming operating system," which is a bit rich since SteamOS and Proton exist. There is a process to make
+          it work but it's a hassle.</p>
+        <ol>
+          <li>Install Wine and your game on Steam, along with your preferred version of Proton.</li>
+          <li>Install winetricks and protontricks (this involved installing like 30 libraries, which may break on you).
+          </li>
+          <li>Go to <a href="https://github.com/rockerbacon/modorganizer2-linux-installer">this Github repo</a> and
+            follow the install instructions. Except for the prefix creation, this was bugged for me.</li>
+          <li>Setup MO2 to work with your Nexus Mods account.</li>
+          <li>Optional: downgrade Fallout 4 to pre-next-gen update to work with older mods and spite Todd.</li>
+          <li>Install Fallout 4 Script Extender and the Unofficial Fallout 4 Patch.</li>
+        </ol>
+        <p>Despite that, it worked! For about a month. It stopped loading F4SE after an update, so I'm wondering if MO2
+        relies on some old version of a library. That was about a week ago and I'm still locked out of my modded
+        campaign, even after reboots and further updates. I may talk more on this when I get it fixed.</p>
+
+        <h2>Final Thoughts</h2>
+        <p>I'm much happier with a mini PC Linux desktop than I am with my old gaming laptop. This is far more powerful
+          and can actually handle the games I'm more interested in playing. This certainly won't be playing Space Marine
+          2 without an eGPU but for fun stuff like Battlebit or Just Cause 3 or old favorites it's super comfortable.
+        </p>
+        <p>I haven't done a lot of programming on this machine but it compiles Rust very quickly, meaning crates like
+          thokr or starship are installed very quickly and Rustlings doesn't take multiple seconds to compile answers.
+        </p>
+        <p>I'm excited to see how this setup develops in the future but for now I'm happy.</p>
+      </article>
+    </div>
+
+    <div class="footer">
+      <p>This site was styled with <a href="https://catppuccin.com">Catppuccin Macchiato!</a></p>
+      <ul>
+        <li><img src="../images/neocities_vaporwave_stamp.gif" alt="Neocities"></li>
+        <li><img src="../images/linux_mint.gif" alt="Linux Mint"></li>
+        <li><img src="../images/neovim.gif" alt="Neovim"></li>
+        <li><img src="../images/transnow2.gif" alt="Trans Rights Now!"></li>
+        <li><img src="../images/webpassion.gif" alt="Web Design Is My Passion"></li>
+      </ul>
+    </div>
+  </body>
+</html>
