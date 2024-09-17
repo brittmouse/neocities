@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 body {
-  background-color: var(--ctp-macchiato-base);
+  background-image: linear-gradient(90deg, var(--ctp-macchiato-sky), var(--ctp-macchiato-pink), var(--ctp-macchiato-text), var(--ctp-macchiato-pink), var(--ctp-macchiato-sky));
   color: var(--ctp-macchiato-text);
   font-family: Quicksand;
   font-size: 16px;
@@ -11,7 +11,7 @@ body {
 header,
 footer {
   background: var(--ctp-macchiato-crust);
-  border: 0.25em double var(--ctp-macchiato-overlay0);
+  border: 0.25em double var(--ctp-macchiato-maroon);
 }
 
 header>ul,
@@ -41,7 +41,7 @@ p {
 
 main {
   margin: 0 auto;
-  border: 0.25em double var(--ctp-macchiato-overlay0);
+  border: 0.25em double var(--ctp-macchiato-maroon);
   padding: 0.5rem;
   width: 720px;
   background: var(--ctp-macchiato-surface0);
