@@ -2,7 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 body {
-  background-image: linear-gradient(90deg, var(--ctp-macchiato-sky), var(--ctp-macchiato-pink), var(--ctp-macchiato-text), var(--ctp-macchiato-pink), var(--ctp-macchiato-sky));
+  background-image: linear-gradient(90deg, var(--ctp-macchiato-sky),
+      var(--ctp-macchiato-pink),
+      var(--ctp-macchiato-text),
+      var(--ctp-macchiato-pink),
+      var(--ctp-macchiato-sky));
   color: var(--ctp-macchiato-text);
   font-family: Quicksand;
   font-size: 16px;
