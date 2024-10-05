@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brittmouse | ThinkPad T480, Pt. 2</title>
+    <link href="../styles/normalize.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../styles/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+
+  <body>
+    <header>
+      <ul>
+        <li><a href="../index.html">Brittmouse</a></li>
+        <li><a href="../about/index.html">About</a></li>
+        <li>Links</li>
+        <li><a href="../index/index.html">Index</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <article>
+        <h1>ThinkPad T480, Pt. 2</h1>
+        <time datetime="2024/10/05"><i>October 5, 2024</i></time>
+        <p>So, here we are again.</p>
+
+        <h2>Receiving the ThinkPad</h2>
+        <p>After the mixup from <a href="./thinkpad-1.html">last time</a>, I received a better ThinkPad T480 on <time
+          datetime="202409/27">September 27</time>. This time, I got a T480 with an Intel Core i7-8650U (slightly better
+          than what I was originally planning on), 16 GB of DDR4 RAM running at 2400 MHz, and a 512 GB SSD.</p>
+        <p>The first thing I did after getting it was look inside to check the condition and get my used to how it
+          looked. I was blown away by how easy it was to disassemble. Removing the external battery was a piece of cake.
+          Six captive screws that I could loosen with a simple #0 sized Philips-head screwdriver is already a massive
+          improvement over the IdeaPad, with its ten non-captive screws, one of which I've since lost. After that, it
+          was just a matter of undoing the plastic clamps around the edge of the bottom cover (something I did with my
+          fingernails but which should be done with a specific tool) and presto, the cover was off and I could check
+          just what was inside.</p>
+        <p>Inside there was a single stick of DDR4-2400 from Samsung, a 512 GB solid state drive in the 2.5 inch drive
+          bay, and the internal battery. Both the internal and external battery were rated for 24 Wh, but the internal
+          battery is only at 66% capacity due to degradation. With that configuration, it gets me about the same amount
+          of battery life that the IdeaPad does with its single 48 Wh battery. There was some dust on the fan but I've
+          removed it.</p>
+        <p>Since there's only one stick of RAM in at the moment, I could easily upgrade this machine to 32 GB with a
+          single install. This may be something for the future since right now 16 GB is a comfortable amount. I may also
+          install a second SSD in the free NVMe slot, but I want to do more research on whether that would even work.
+        </p>
+        <p>While the first one I bought mistakenly was $170, this turned out to be $270, which for not having to do any
+          repairs or replacements so far is really good.</p>
+
+        <h2>My Time With It</h2>
+        <p>While I had some ideas for this originally, like putting Debian Testing or EndeavourOS on it, I didn't end up
+          doing any of what I had originally had planned (at least so far). I didn't have a EndeavourOS .iso laying
+          around on either my desktop or laptop, and I didn't really want to put in the effort of grabbing the torrent
+          file and waiting for that to finish for either of them. Instead, I had a flash drive with the most recent
+          release of Arch Linux on it (specifically 2024.09.01). I used that to install Arch onto my new ThinkPad.</p>
+        <p>My install wasn't that easy, but that was on me forgetting something very important. The ThinkPad came
+          installed with Windows 11 on it stock, so I booted into BIOS and set my flash drive as the primary boot drive.
+          For whatever reason, this refused to work each of the 10-ish times I restarted the laptop to get it to work.
+          It was a solid hour before I realised "Oh wait, I have to disable Secure Boot." It took me a couple of minutes
+          to find that, but once I found and disabled Secure Boot it booted right into the Arch live environment.</p>
+        <p>I was originally intending to go through a manual install of Arch, so I followed the wiki for the first
+          little bit. I connected to my home Wi-Fi, set my keyboard layout and locale, and the promptly gave up on the
+          manual install and used the <code>archinstall</code> script. I have installed Arch the hard way before on my
+          desktop, following <a href="https://www.youtube.com/watch?v=YC7NMbl4goo&pp=ygUSaG93IGkgaW5zdGFsbCBhcmNo">Dream
+            Of Code's video</a> on it and installed GNOME. However, I hated GNOME and redid that manual install with KDE
+          Plasma and somehow screwed it up. I didn't want to have that same headache with my ThinkPad so I took the easy
+          way out. Sue me.</p>
+        <p>I took the boring path and installed the KDE Plasma 6 desktop. I have used the desktop before for short
+          periods of time and didn't like it as much as I liked the Cinnamon desktop. This time though I really wanted
+          to give it a shot, and I'm so glad I did. It's the basic bitch of Linux hipsters but I'm running Arch with KDE
+          Plasma on a ThinkPad. It's a whole stereotype and I am it.</p>
+        <p>I'm glad too because the ThinkPad fucking rocks! The keyboard was a changeup from what I was used to on the
+          IdeaPad but it's a clear improvement. I love not having my hands off-center from the display because of some
+          numpad. I love the smaller form factor (even if it is heavier and thicker). I love how good the display is
+          after over a year with what's probably the worst display I've seen on a modern laptop. Seriously, IdeaPad
+          screens are garbage! Again, I just love the keyboard, it's super thumpy and it sounds and feels great to type
+          on. It's a bit of a change-up because the Ctrl and Fn keys on the bottom left have swapped but it does feel
+          pretty comfortable after this long with it, even if it does mean swapping between the ThinkPad keyboard and a
+          mechanical keyboard leaves me feeling a bit confused. I like having a touchscreen even if I don't use it that
+          much. And the trackpad, oh my GOD the trackpad. I've been spoiled so quickly on the trackpad and buttons. It's
+          such a massive benefit that I don't know if I'll be able to be comfortable using a different laptop ever again,
+          that is how good it is.</p>
+        <p>Now it isn't perfect by any means. The battery life being about the same as the IdeaPad does kinda suck, even
+          if I don't normally have to worry about it. The speakers are awful. Even with a 4-core CPU, the computer does
+          struggle to keep up with me typing in Discord, largely due to just how heavy that application is on the CPU
+          and not due to the CPU itself. I know for a fact it won't run new games (and I don't have any intention of
+          turning this into a gaming device anyways, aside from Space Cadet Pinball, puzzles, and board games). However,
+          for writing, web browsing, and general tasks and light scripting, it's fantastic.</p>
+        <p>I'm also really enjoying using Arch Linux on it. </p>
+
+        <h2>Future Plans</h2>
+        <p>Right now I plan on using this as my daily driver for the foreseeable future, meaning I have an IdeaPad just
+          sitting around not doing anything. That may get repurposed as a remote storage computer, but it's also a
+          little bit too power-consumptive to do basic homelab stuff efficiently. I'll likely still use it as I have so
+          much stuff on there, but I'm not likely to actively choose it often. As of the time of writing, it needs to be
+          upgraded to Mint 22 alongside the desktop so that's going to happen soon if not immediately after publishing
+          this.</p>
+        <p>As for upgrades, I don't have a need to put more RAM or storage into this as of right now. The upgrades I see
+          myself most likely to take include upgrade both the internal and external batteries with higher capacity
+          versions and potentially something weird like installed the 1440p display since what I have now is 1080p or
+          putting in the cool T430 keyboard. If I ever get a Framework 13, this will likely become a server interface so
+          I can interact with a NAS, SBC running PiHole, Git remote, or Nextcloud instance. Having the ThinkPad be the
+          main interface for a self-hosted home technology solution would be very cool.</p>
+      </main>
+
+    <footer>
+      <p>This site was styled with <a href="https://catppuccin.com">Catppuccin Macchiato!</a></p>
+      <ul>
+        <li><img src="../images/neocities_vaporwave_stamp.gif" alt="Neocities"></li>
+        <li><img src="../images/linux_mint.gif" alt="Linux Mint"></li>
+        <li><img src="../images/neovim.gif" alt="Neovim"></li>
+        <li><img src="../images/transnow2.gif" alt="Trans Rights Now!:"></li>
+        <li><img src="../images/webpassion.gif" alt="Web Design Is My Passion"></li>
+      </ul>
+    </footer>
+  </body>
+
+</html>
