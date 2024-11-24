@@ -68,6 +68,12 @@ main h3 {
   font-style: italic;
 }
 
-main p {
+main>p,
+article>p {
   text-indent: 1.25rem;
+}
+
+main code {
+  font-size: 0.9em;
+  color: var(--ctp-macchiato-green);
 }

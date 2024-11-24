@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brittmouse | Thinkpad T480, Pt. 3</title>
+    <link href="../styles/normalize.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../styles/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+
+  <body>
+    <header>
+      <ul>
+        <li><a href="../index.html">Brittmouse</a></li>
+        <li><a href="../about/index.html">About</a></li>
+        <li>Links</li>
+        <li><a href="../index/index.html">Index</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <article>
+        <h1>ThinkPad T480, Pt. 3</h1>
+        <time datetime="2024/11/24">November 24, 2024</time>
+        <p>Things have changed a little bit since the <a href="./thinkpad-2.html">last time</a> I wrote about this. I'm
+          still happily using the ThinkPad, but my journey with it has been both inspiring and frustrating.</p>
+
+        <h2>Arch (By The Way)</h2>
+        <p>Arch Linux with KDE Plasma was a really good time. Having in-depth control of my operating system is
+          something I wanted, and I absolutely got it with Arch. Having access to all the up-to-date software I could
+          ask for was very easy to get used to, especially with the AUR.</p>
+        <p>KDE Plasma was a different matter. It used a lot of my system resources, which on a slightly older ThinkPad
+          with a damaged internal battery was somewhat frustrating. The other frustrating thing to me was the entire
+          aesthetic. I just do not like the glossy, shiny, frosted-glass finish of the desktop. It reminded me of the
+          Windows 11 desktop, and that aesthetic was bad enough that it caused me to switch to Linux in the first place.
+          I also didn't like the KDE apps like Akregator, Kate, and Konsole much. While they worked, I just did not
+          enjoy using them in any capacity. No hate to the developers who made such great apps! I just don't like that
+          style of application.</p>
+        <p>After about three weeks with Arch, it was starting to slow down on me, and I realized that I hadn't rebooted
+          the computer since to allow it to rest some. So I went and rebooted it. When I saw the decryption prompt, my
+          world stopped.</p>
+        <p>I forgot my encryption password.</p>
+        <p>Well, no matter, I can check the Bitwarden app I have installed on my Linux Mint laptop since I have it.
+          Except when I checked the Flatpak app, my encryption password wasn't there, despite me putting that password
+          into the Bitwarden app on the ThinkPad.</p>
+        <p>A ThinkPad I couldn't unlock without it.</p>
+        <p>(Turns out, I had properly backed it up, it was just that the Flatpak app was, for whatever reason, not
+          showing it. It showed up in the Firefox extension well after this but I didn't check that in time.)</p>
+        <p>Yeah that was a pretty miserable day. Without thinking about it, I had lost everything on the ThinkPad just
+          because (I thought) stupid Bitwarden screwed me over, or that I didn't actually save it even though I was
+          certain I had (and I did). While I hadn't lost much, I did lose some unpushed dotfiles that I had changed and
+          committed before doing this, along with the start of a piece of flash fiction I was writing and enjoying. I
+          still haven't remembered what that story was about, so it is gone forever.</p>
+
+        <h2>NixOS and the Curse of <code>sudo nixos-rebuild</code></h2>
+        <p>Once I saw the encryption screen and realized I didn't have my password anymore, I began looking for a new
+          Linux distribution to put on it. I had heard some very interesting things about NixOS from <a
+            href="https://www.youtube.com/@vimjoyer">Vimjoyer</a> and <a
+            href="https://www.youtube.com/watch?v=CwfKlX3rA6E&pp=ygUUbm8gYm9pbGVycGxhdGUgbml4b3M%3D">No Boilerplate</a>.
+          I knew that it was an operating system built off of a declarative package manager called Nix that used a
+          functional programming language called Nix. I knew you could install files like you would plugins for Neovim,
+          where instead of typing an install script for each plugin you wanted, you write down which plugins you want in
+          a file / multiple files and let the package manager (in my case Lazy) do the work. I also knew it was
+          generally perceived as harder to use than Arch so I figured I would continue to indulge my hipster brain and
+          install NixOS.</p>
+        <p>Before this, I tested it in a GNOME Boxes virtual machine. It wasn't that bad just starting out. The 24.05
+          release is somewhat old but worked well. Originally I was testing with the KDE install ISO, but this has
+          caused some problems for me and I found that the stable GNOME install ISO would work in the VM after a proper
+          install, no matter the desktop environment I chose to install. My first VM used the Xfce desktop, a very
+          lightweight and minimal desktop environment, and my second used Cinnamon (shocker). That one came later and
+          I'll explain why in a bit.</p>
+        <p>I played around some with installing software in the Xfce install first, and while a few things annoyed me, I
+          was so excited to successfully rebuild the system without an error that I got up from my seat and clapped. I
+          finally felt like I was moving on to harder things, and I was super excited for it. The things that annoyed me
+          weren't that big but did act like the rock under the rug. Running Neovim as a superuser (<code>sudo
+            nvim</code>) causes the editor to not load a config. I'm not really sure as to the reason for this; maybe
+          it's because when it runs as a superuser it looks for a global config instead of a local config like the one
+          stored in <code>~/.config</code>. Running <code>sudoedit</code> ran Nano (ew) even after I set the editor
+          variable to Neovim.</p>
+        <p>After testing it out for a while, I decided NixOS with Xfce was what I wanted to run next. So I flashed the
+          GNOME install ISO to the flash drive and went through the Calamares installer. That's the same one you find
+          when installing something like EndeavourOS. It went smoothly and I had a working NixOS on my hands!</p>
+
+        <h3>Tier 1: <code>/etc/nixos/configuration.nix</code></h3>
+        <p>I started by editing the configuration file in <code>/etc/nixos</code>. I installed stuff like Neovim, Emacs,
+          system utilities like Tmux and Zsh, fun terminal stuff like Starship, and graphical programs like LibreOffice,
+          the kitty terminal, and Brave. Each time I modified that environment packages array, I had to save and run
+          <code>sudo nixos-rebuild switch .</code> in the <code>/etc/nixos</code> directory. It was pretty basic but
+          it let me use stuff normally.</p>
+        <p>Then I realized that the Neovim version was 0.9.5, and not 0.10.2.</p>
+        <p>Because I was running NixOS 24.05, not all the software in the (very large) Nix package repos were bleeding
+          edge. This makes sense for a server or LTS desktop because you want to make sure everything works. However, a
+          new Neovim was something I really wanted since treesitter only works consistently with the newest stable
+          release. So I wasn't going to stick in Tier 1 for long. I had to advance.</p>
+
+        <h3>Tier 2: Flakes and Home Manager with a Side of "Bashing My Head Into A Wall"</h3>
+        <p>I watched Vimjoyer's video on setting up flakes and Home Manager and followed along. I used the unstable
+          package repositories so I would have access to the most recent stable Neovim, along with the most recent
+          versions of any software I was regularly using, like Vesktop. However, setting it up as he recommended caused
+          things to fail constantly. It never once rebuilt properly even after running <code>sudo nixos-rebuild switch
+            --flake .</code> and not having semicolon errors. I had giant stack trace errors relating to some damn bug in
+          the code that I couldn't decipher because the stack traces were dogshit. It ate up far too much of time
+          time.</p>
+        <p>This is where that second NixOS VM comes into play. I spun up a second one running Cinnamon and started
+          following a different guide on how to do it. Shockingly, the new guide worked perfectly, and I used that for
+          my ThinkPad setup. I finally had what I needed.</p>
+        <p>Or so I thought. See, I wanted to use Git to track my changes to the config diretory and back it up to
+          GitHub. I didn't really want to run a Git repo in <code>/etc</code> mostly because I'm not sure it would work.
+          So I copied all the files in <code>/etc/nixos</code> down to a folder in my home directory and started
+          rebuilding my system using <code>sudo nixos-rebuild switch --flake .</code> outside of where it's supposed to
+          live. I saw some people disagreeing with others' decision to do this on Reddit but I went ahead with it
+          anyways.</p>
+        <p>So now, finally, I had a tracked NixOS configuration that I could modify using a non-superuser Noevim,
+          meaning I had all the plugins and LSPs I needed. I assumed.</p>
+
+        <h3>Tier 3: What do You Mean I Can't Use Lazy? Why is Cinnamon Doing This??</h3>
+        <h4>NixOS hates your language server</h4>
+        <p>Because NixOS handles package installation from a single file (or multiple files, if you want to break the
+          config up and use imports to get the main file to recognize them), other package managers installing and
+          running binaries is generally frowned upon by the system. It also generally prefers configuration of binaries
+          like Zsh and Starship to be handled in a .nix config file.</p>
+        <p>This is actually pretty neat, as the OS will translate the Nix config to whatever language the program is
+          intended to be configured with and then create a read-only file sym-linked to what it generated. So for
+          Starship, I could tell it my character was going to be the lambda glyph from Nerd Fonts and that I wanted to
+          use Nerd Font symbols for the prompt instead of Noto emojis and it would create
+          <code>~/.config/starship.toml</code> as a read-only file for Starship to use.</p>
+        <p>However, this made using <a href="https://github.com/nvim-lua/kickstart.nvim">Kickstart.nvim</a> a hassle
+          since it uses Lazy as its package manager and uses Mason to install language servers. Language servers
+          installed via Mason are not permitted to run on NixOS, since it's an executable creating a runtime outside of
+          the <code>conf.nix</code> files. I couldn't run Lua LS, Emmet LS, or Marksman at all.</p>
+        <p>What NixOS wants you to do is put those (Neo)vim plugins into your <code>conf.nix</code> file and tell Neovim
+          to run with those plugins. It wants the same for Emacs too, which is why trying to get Doom Emacs to work was
+          also a massive hassle (I was planning on using org + evil for writing; while there is an orgmode Neovim
+          plugin, I'm back to Markdown for creative writing). This was well outside what I was comfortable handling.
+          I couldn't even get spell check with aspell, enchant, or hunspell working either despite me installing those
+          binaries and telling Doom Emacs to load them.</p>
+
+        <h4>NixOS hates your Wi-Fi hotspot</h4>
+        <p>Another problem I had was connecting to Wi-Fi properly. Because I don't work from home, I bring my laptop to
+          work daily so I can do things like scroll through social media, chat with friends on Discord, and write
+          creatively and for this website through Neovim. Xfce was posing a couple issues for me around what it was
+          willing to connect to. It would let me connect to some websites, but other websites like Discord were a no go.
+          I didn't really understand this but I figured disabling the firewall setting in <code>conf.nix</code>. It
+          didn't work.</p>
+        <p>Xfce was also definitely showing its age. While a great retro desktop environment, it was so retro that it
+          didn't click with me. So I went back to Cinnamon as my desktop of choice. I liked how easy it was to move to a
+          different DE though! I just changed a couple of lines in <code>conf.nix</code>, rebuilt the system, and then
+          rebooted. Just like that, I was running Cinnamon and not Xfce. I got it set up with the Everforest GTK theme
+          and it was actually quite pretty.</p>
+        <p>However, this made the Wi-Fi problem worse. Instead of having limited connectivity over mobile hotspot, I got
+          <em>no</em> connectivity over mobile hotspot. Progress!</p>
+        <p>Imagine my surprise when I go to check Tumblr over lunch at work and I get a Firefox error page saying it
+          couldn't communicate over the network despite me being connected. That put a serious damper on my desire to
+          keep using NixOS. I thought I could prove myself by learning to live with it and get it to do what I want, but
+          in the end, I couldn't keep up.</p>
+
+        <h2>Fedora: Knowing My Limits</h2>
+        <p>I distinctly remember what I was doing when I decided I was done with NixOS. It was 10 days into my
+          experiment. I was sitting on the couch in the living room, "watching" Formula 1 qualifying, and fighting with
+          NixOS over trying to get a damn spellcheck installed for Doom Emacs. I thought 'Is this even worth it
+          anymore?' It really wasn't. I wasn't enjoying myself. I wasn't getting stuff done. I was messing with my
+          config file hoping that once I got it right, I could work with no issue. I had become the <a
+            href="https://www.youtube.com/watch?v=korOpibkm6g">bigboxSWE </a> meme.</p>
+        <p>I decided that Saturday to ditch NixOS. But what was I going to move back to?</p>
+        <ol>
+          <li>Linux Mint</li>
+          <p>Linux Mint 22 had been out for at least a month by then. While I'm quite comfortable with Linux Mint,
+            having used it for over a year, I wasn't interested in moving back to an Ubuntu-base, as I knew the software
+            was going to be a little older than I wanted.</p>
+          <li>EndeavourOS</li>
+          <p>My mini PC is running EndeavourOS. While it works well, I've been enjoying the Arch system less and less as
+            time has gone on.</p>
+          <li>Arch Linux</li>
+          <p>I had the same problem with this as I did EndeavourOS. I like vanilla Arch over EndeavourOS, but it's still
+            an Arch system. I wanted something different.</p>
+          <li>Fedora Linux</li>
+          <p>I had heard about this first from The Linux Experiment, back when he was running Fedora with GNOME instead
+            of Tuxedo OS. I was interested in having more up-to-date software without the dangers of a rolling release
+            like Arch. Plus Fedora has about a dozen spins of their Workstation with different desktops, like Xfce, KDE
+            (which I don't enjoy), i3, and Cinnamon. Also, Fedora 41 had just released, so I wouldn't have to worry
+            about some of the software being 6 months old.</p>
+        </ol>
+        <p>After that decision process, the choice was basically made. Fedora Cinnamon, here I come!</p>
+        <p>Before that though, I decided I was going to test in out in a VM again before making the switch over. I
+          figured it'd be better to make sure the install process would go smoothly before flashing the ISO to my
+          designated Distro Flash Drive<sup>TM</sup>. It all went smoothly, and it felt great being back in a desktop
+          environment I enjoyed and wanted to keep using.</p>
+        <p>I've been running Fedora for a couple of weeks now and I'm very pleased with it. Package management is much
+          simpler than it is with NixOS, but there's less variety than Arch Linux; programs like Kanata (a keyboard
+          remapper), Zellij (an alternate terminal multiplexer to Tmux), and Starship (a pretty terminal prompt) are not
+          in the Fedora repos. At least with these, they are all Rust crates, so you could either download the
+          precompiled binaries they provide on their Githubs or compile it yourself using <code>cargo</code>. The
+          package manager syntax is also much more familiar, with strings like <code>dnf search vim</code> instead
+          of <code>pacmac -Ss vim</code>.</p>
+        <p>The main reason I moved back to an "easier" distro is because I wasn't getting anything out of the harder
+          package managers besides frustration. I just needed things to get simpler so I didn't have to worry about some
+          damn strange syntax in a .nix file or trying to figure out pacman's syntax. I've heard plenty of jokes about
+          DNF being slow, but that's just the default settings, which can be changed with a simple edit to
+          <code>/etc/dnf/dnf.conf</code>. The default settings for some reason limit DNF to only <em>three</em> parallel
+          downloads.</p>
+        <p>Here's my entire <code>dnf.conf</code> in case you want to see:</p>
+        <blockquote style="font-family: monospace; font-size: 0.9em;">
+          <div>[main]</div>
+          <div>gpgCheck=True</div>
+          <div>installonly_limit=3</div>
+          <div>best=False</div>
+          <div>skip_if_unavailable=True</div>
+          <div>max_parallel_downloads=10</div>
+          <div>fastestmirror=True</div>
+        </blockquote>
+        <p>It should go without saying that increasing max parallel downloads from three to ten makes the process of
+          installing and upgrading software much faster. DNF can actually support up to twenty max parallel downloads,
+          so if you're really feeling the need for speed, you can crank it way up.</p>
+        <p>I imagine I'll be staying on Fedora for a while. DNF is nice and fast, the software I want is far more up to
+          date than the 6-month Ubuntu releases (especially Neovim; it's wild that Debian Sid has 0.7.2 and Fedora 41
+          has 0.10.2), and stuff just works unlike NixOS.</p>
+        <p>Of course, I haven't extricated the brainworm of endless configuration and customization. I've switched from
+          LazyVim back to Kickstart on this install, I've moved from Tokyo Night to One Dark, I'm trying out Zellij
+          again compared to Tmux, and I'm not even staying on Cinnamon all the time. I'm trying out tiling window
+          managers like Awesome and I've already wasted much of November 23 trying to get the themes to look less bad.
+          We'll see where this takes me going forward.</p>
+      </article>
+    </main>
+
+    <footer>
+      <p>This site was styled with <a href="https://catppuccin.com">Catppuccin Macchiato!</a></p>
+      <ul>
+        <li><img src="../images/neocities_vaporwave_stamp.gif" alt="Neocities"></li>
+        <li><img src="../images/linux_mint.gif" alt="Linux Mint"></li>
+        <li><img src="../images/neovim.gif" alt="Neovim"></li>
+        <li><img src="../images/transnow2.gif" alt="Trans Rights Now!:"></li>
+        <li><img src="../images/webpassion.gif" alt="Web Design Is My Passion"></li>
+      </ul>
+    </footer>
+  </body>
+</html>
