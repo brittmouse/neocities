@@ -99,8 +99,13 @@
           package repositories so I would have access to the most recent stable Neovim, along with the most recent
           versions of any software I was regularly using, like Vesktop. However, setting it up as he recommended caused
           things to fail constantly. It never once rebuilt properly even after running <code>sudo nixos-rebuild switch
+<<<<<<< HEAD
             --flake .</code> and not having semicolon errors. I had giant stack trace errors relating to some damn bug in
           the code that I couldn't decipher because the stack traces were dogshit. It ate up far too much of time
+=======
+            --flake .</code> and not having semicolon errors. I had giant stack trace errors relating to some damn bug
+          in the code that I couldn't decipher because the stack traces were dogshit. It ate up far too much of my
+>>>>>>> e5f35fa (add(tech): ThinkPad Pt. 3 article; edit style to include code tag)
           time.</p>
         <p>This is where that second NixOS VM comes into play. I spun up a second one running Cinnamon and started
           following a different guide on how to do it. Shockingly, the new guide worked perfectly, and I used that for
@@ -111,7 +116,11 @@
           rebuilding my system using <code>sudo nixos-rebuild switch --flake .</code> outside of where it's supposed to
           live. I saw some people disagreeing with others' decision to do this on Reddit but I went ahead with it
           anyways.</p>
+<<<<<<< HEAD
         <p>So now, finally, I had a tracked NixOS configuration that I could modify using a non-superuser Noevim,
+=======
+        <p>So now, finally, I had a tracked NixOS configuration that I could modify using a non-superuser Neovim,
+>>>>>>> e5f35fa (add(tech): ThinkPad Pt. 3 article; edit style to include code tag)
           meaning I had all the plugins and LSPs I needed. I assumed.</p>
 
         <h3>Tier 3: What do You Mean I Can't Use Lazy? Why is Cinnamon Doing This??</h3>
@@ -141,8 +150,13 @@
           work daily so I can do things like scroll through social media, chat with friends on Discord, and write
           creatively and for this website through Neovim. Xfce was posing a couple issues for me around what it was
           willing to connect to. It would let me connect to some websites, but other websites like Discord were a no go.
+<<<<<<< HEAD
           I didn't really understand this but I figured disabling the firewall setting in <code>conf.nix</code>. It
           didn't work.</p>
+=======
+          I didn't really understand this but I figured disabling the firewall setting in <code>conf.nix</code> would
+          solve it. It didn't work.</p>
+>>>>>>> e5f35fa (add(tech): ThinkPad Pt. 3 article; edit style to include code tag)
         <p>Xfce was also definitely showing its age. While a great retro desktop environment, it was so retro that it
           didn't click with me. So I went back to Cinnamon as my desktop of choice. I liked how easy it was to move to a
           different DE though! I just changed a couple of lines in <code>conf.nix</code>, rebuilt the system, and then
@@ -182,7 +196,11 @@
             about some of the software being 6 months old.</p>
         </ol>
         <p>After that decision process, the choice was basically made. Fedora Cinnamon, here I come!</p>
+<<<<<<< HEAD
         <p>Before that though, I decided I was going to test in out in a VM again before making the switch over. I
+=======
+        <p>Before that though, I decided I was going to test it out in a VM again before making the switch over. I
+>>>>>>> e5f35fa (add(tech): ThinkPad Pt. 3 article; edit style to include code tag)
           figured it'd be better to make sure the install process would go smoothly before flashing the ISO to my
           designated Distro Flash Drive<sup>TM</sup>. It all went smoothly, and it felt great being back in a desktop
           environment I enjoyed and wanted to keep using.</p>
