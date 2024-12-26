@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brittmouse | Reflections on 2024</title>
+    <link href="../styles/normalize.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../styles/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+
+  <body>
+    <header>
+      <ul>
+        <li><a href="../index.html">Brittmouse</a></li>
+        <li><a href="./index.html">About</a></li>
+        <li>Links</li>
+        <li><a href="../index/index.html">Index</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <h1>Reflections on 2024</h1>
+      <time datetime="2024/12/26">December 26, 2024</time>
+      <p>2024 has thrown a lot of shit. It's also thrown some good. On the whole I'm not too jazzed about how events
+        have transpired.</p>
+      <p>This has turned out a bit longer than I was anticipating, so I'll include a table of contents for you to use to
+        hop around.</p>
+
+      <section>
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#tech">Technology and Linux</a></li>
+          <li><a href="#rel-pol">Religion and Politics</a></li>
+          <ul>
+            <li><a href="#palestine">Israel-Palestine</a></li>
+            <li><a href="#visit">The Visit</a></li>
+            <li><a href="#follow-up">Following Up</a></li>
+            <li><a href="#politics">Politics</a></li>
+            <ul>
+              <li><a href="#mangione">Mangione</a></li>
+            </ul>
+          </ul>
+          <li><a href="#to-2025">The Road Goes Ever On and On</a></li>
+        </ul>
+      </section>
+
+      <h2 id="work">Work</h2>
+      <p>This is my first time working a full calendar year since 2020, and it's been a test of endurance. While I enjoy
+        much of my job, it's left me knowing this is not something I want to be stuck doing for another year.</p>
+      <p>For context, I work at a used book store, and I make and manage the customized listing we post to eBay for
+        speciality books, rare finds, older textbook editions, and lots of Kickstarter projects for some reason. While
+        it nets a lot(and I mean a lot) in sales, it gets old after doing it for weeks on end, even considering my
+        rather extensive notetaking system. Leave it to the GNU/Linux user to use Neovim daily for writing Markdown.</p>
+      <p>I've thoroughly enjoyed my time there but I can't make a living doing it, and I especially can't afford an
+        apartment on this sort of money. 2025 is going to be the year I look towards leveling up. I'm not sure which
+        direction that goes though, whether that's going back to college or learning IT stuff or trying to make my way
+        doing some writing for magazines and journals, something I've been quietly interested in for a while anyways.</p>
+
+      <h2 id="tech">Technology and Linux</h2>
+      <p>I started using Linux back in June or July 2023, and I have felt no compulsion to go back to Windows on any of
+        my personal devices. Switching to Linux has been something I've very happy with, even if this year was my year
+        of distrohopping. While not as extreme as others I've seen, I have used, across various devices:</p>
+        <ul>
+          <li>Linux Mint</li>
+          <li>EndeavourOS</li>
+          <li>Arch Linux</li>
+          <li>NixOS</li>
+          <li>Fedora</li>
+        </ul>
+      <p>And that's not even counting the various virtual machines I've messed around with, including Pop!_OS and Debian.</p>
+      <p>I'd like to think I feel stable enough with my choice of Linux distributions for the time being, as I'm really
+        not interested in continuing to distrohop just to try out a package manager or whatever else. Sure, my IdeaPad
+        needs to get an updated version of Linux Mint or at the very least have its data backed up so I can do either a
+        proper upgrade or put Fedora or something on it, as that seems to be where I'm most comfortable with Linux
+        distributions at this time. And yeah, I could put Fedora with Sway on my mini PC because I'm not that much of a
+        fan of the Arch family of distros. But right now I just want stuff to work well.</p>
+      <p>Besides, I have something new to experiment with. I've been looking into running a home server for a while
+        &ndash; something for my family to host their own files away from big cloud storage providers like Google Drive,
+        Onedrive, and Apple Cloud that are stealing everything in them to run LLM and image generation model trainings
+        with no respect to copyright or due compensation. Is it strictly necessary? Probably not, as I don't really
+        expect something like a local cloud to really be picked up on quickly, as neat as it would be. But a small
+        computer can still do a lot even if it's not being used for a NAS. I could do things like run network-wide
+        adblocking, set up a VPN so I can connect to the home network from anywhere as long as I have my own internet
+        connection, set up a digital library for my dad and I who get lots of ebooks, run a game emulator like Dolphin
+        for our old Wii games, or run a simple Minecraft server for my sister and I to share.</p>
+      <p>Because of this, I asked for a decently strong mini PC to start with for Christmas. Surprisingly, they actually
+        got it for me. It's a GMKtec Nucbox M5 Plus with an AMD Ryzen 5825U and integrated graphics. It's got dual 2.5Gb
+        Ethernet ports, lots of USB ports, HDMI and DisplayPort output, and it's easier to disassemble than the
+        Minisforum UM790 Pro that sits on my desk. You just pop the top off, unscrew four Philips head screws, and pop
+        the fan cover off, and that gives you access to the internals.</p>
+      <p>I got it barebones to save money and not have to waste time uninstalling a licensed copy of Windows 11 that I
+        want nowhere near me. While writing this, I got a 1 TB Samsung 990 EVO Plus and 16 GB of RAM at DDR4-3200 from
+        Corsair, and I barely managed to fit the entire cost onto the gift cards I got for my birthday and Christmas.
+        I'm also undecided on what operating system to put on it. Like <em>obviously</em> it's going to be Linux, but
+        what kind of Linux do I want to be running? So far the debate is between Proxmox, Ubuntu Server, and Fedora
+        Server, but you'll hear much more about that as I catalog my experiences with setup similar to my ThinkPad
+        articles.</p>
+      <p>The services themselves are also something I'm looking into. While I've hardly decided what I want yet, I at
+        least want a local remote for my Git repositories (these are largely creative writing and not software projects
+        because I am a madwoman, but there are a couple software things I'd like to build out, like an HTTP server).
+        That could be done using something like Gitea (although there's been some drama around that?), Forgejo (which is
+        what Codeberg is built on), GitLab (which is apparently very heavy on system resource use), or a bare Git server
+        following a guide in the ebooks I got from Humble Bundle. I also definitely want adblocking, likely a NAS of
+        some sort, and a Minecraft server. This computer should be powerful enough to handle that.</p>
+      <p>My tech experiences this year have been pretty great, which is more than I can say for the rest of the year,
+        but I'm taking it.</p>
+
+      <h2 id="rel-pol">Religion and Politics</h2>
+      <p>I'm putting these together because of the overlap they have in my life as well as their impacts on my mental
+        health. I'm not a very religious or spiritual person, having been strongly disillusioned with Christianity after
+        seeing how terribly I was treated once I realized I was transgender. It was to the point where I confessed a
+        little too much to my therapist on the day of my graduation and thus completely missed it as I got sent to a
+        psych ward.</p>
+      <p>I've been bouncing around for a while, dipping my toes into different things to see what makes sense to me.
+        Paganism didn't really catch me, as I'm not a fan of the "manifest your better self" shit that seems to be all
+        over the place. I certainly didn't want to go back to Christianity, and Islam is not something I've ever wanted
+        to be part of. For a while I was antitheist, taking the socialist line of "organized religion of the opiate of
+        the masses," something I do still generally agree with but hate seeing out and about because it is
+        <em>always</em> the most annoying people saying that.</p>
+      <p>And then October 7 happened.</p>
+
+      <h3 id="palestine">Israel-Palestine</h3>
+      <p>I haven't been on Israel's side for a while, as the racial discrimination and deeply weird expansionist
+        settlers have given me more than enough reasons to oppose the Israeli government. That's not even getting into
+        Tde Seiman. Directly after October 7, my heart broke for the 1200 dead that Hamas left in their wake and the 230
+        hostages taken. It broke again and again with each Israeli airstrike that killed dozens or each IDF sniper that
+        killed a Palestinian journalist. I've been angry about the war and the endless "oh we're really close to a
+        ceasefire guys, trust me" lies from the Department of State. It's to the point that I can't even read Blinken's
+        writing without wanting to scream at him for refusing to communicate in a way that actually gets information
+        across to people instead of propaganda.</p>
+      <p>What's pissed me off nearly as much were the student protests against it. I haven't gotten to a rally for
+        either side of this conflict because radical Zionists (radical Zionism here meaning only a Jewish state should
+        exist in the Land of Israel and not an Arab one) and Christian dominionists on Israel's side are repugnant
+        people, and radical pro-Palestinian groups trend towards lionizing Hamas and legitimizing violence towards Jews
+        with phrases like "globalize the Intifada."</p>
+      <p>Neither of these radicals are people I'm willing to support, and I actually have more criticism and anger
+        towards the radical pro-Palestinians for failing to properly understand the situation and just being intensely
+        racist towards Jews at large. You can oppose apartheid and anti-Arab discrimination without getting into
+        international banking consortiums or manipulative pro-Israel groups being the only reason Israel gets any
+        support among Americans or saying antisemitism doesn't exist. I expect racists in the pro-Israel crowd to be
+        racist. I expect evangelicals, especially Christian dominionists, to be racist towards Jews in their own
+        "convert or die" approach to Armageddon. I expect self-avowed antiracists on the American Left to not be racist.
+        That shouldn't be hard.</p>
+
+      <h3 id="visit">The Visit</h3>
+      <p>All that to say, the behavior of many pro-Palestinian groups got me more than a little interested in how well
+        my local Jewish community was doing. After all, there are lots of synagogues both in and outside Atlanta. Why
+        not pop in one day and see what it's like?</p>
+      <p>One Saturday, the Saturday for Passover it turned out, I went looking for a temple nearby to visit. There was
+        one just a few minutes from me. Better yet, it was a Reform synagogue, which would likely be easier for me as a
+        non-Jew to understand because there's less Hebrew and more English. So I just got up and left, and I had one of
+        the best experiences of the past year.</p>
+      <p>The rabbi was a cool alternative guy who didn't really look like a rabbi but did look like a wise man. He led
+        morning prayers on the floor, eschewing the dais raised above the congregation which had the podiums for the
+        rabbi, cantor, candle lighting ceremony, and which housed the Ark that held the two Torah scrolls. He had a
+        guitar with a shallow body in his hands and dressed pretty modestly, with a short-sleeved button up instead of a
+        dress shirt.</p>
+      <p>The congregation was all older folks, and while I have seen a few people around my age there, the regulars are
+        a couple moms and the elderly. That wasn't really off-putting though, as I've been hanging around people older
+        than me my entire life (don't take that out of context). The service itself was about an hour and a half, and
+        I'm very glad I went to a Reform temple for my first visit because I didn't know a lick of Hebrew besides the
+        stuff that's transcended the language barrier and made its way into English (words like Halleluyah).</p>
+      <p>The siddur (prayer book) used is the Mishkan T'filah by the Central Conference of American Rabbis. I ended up
+        buying the traveler's edition for myself, and I'm very happy the Conference made the decisions it did with the
+        siddur. It has Hebrew (with vowel markings), English, and a transliteration so you can pronounce the Hebrew
+        prayers and songs even without knowing Hebrew. I can't overstate how much that has helped me.</p>
+      <p>They were super patient with me and answered a lot of the questions I had. I answered their questions about why
+        I was there, saying I was there to learn for myself and not for a class (they get a lot of World Religions
+        students) and I wasn't there to convert either. The prayers themselves are gorgeous, and since going I've been
+        singing them in my own time. After the service, we all went out to the lobby and had lunch. We studied the
+        annual cycle of the three pilgrimage festivals (Passover, Shavuot, and Sukkot) instead of some hokey teaching
+        about God's love and Jesus' sacrifice that my pastors had never stopped talking about. Having a teaching about
+        something that basic and grounded instead of the sort of grand, all-encompassing reach of Protestant teachings
+        really kept my interest.</p>
+      <p>It was in short the best experience I had in a religious place for a long time.</p>
+
+      <h3 id="follow-up">Following Up</h3>
+      <p>Since then, I've been going every couple of weeks to both Friday night and Saturday morning services, getting
+        to know people and getting involved with the temple proper. I'm now one of three people who knows how to run the
+        streams for services, and it's something I'm rather happy doing. While I don't get along with everyone, I've
+        kept going because it feels like I need to for myself. I feel safer there than I did at a church despite the
+        constant worry of some antisemite getting in that the police officer outside always represents. I'm learning,
+        I'm laughing, and I'm able to be around people who want me to learn and grow.</p>
+      <p>The first rabbi has left to lead a congregation a state over. We went months without a rabbi, but we did
+        eventually find someone originally from New York living in the area to serve as a sort of interim rabbi for a
+        few months. Having a gay rabbi has made me feel safer as a transgender woman, although it turned out the
+        previous rabbi has a queer daughter, so I've always been more accepted there than I expect I would be at an
+        Orthodox synagogue. It turns out that several of the Orthodox synagogues here are welcoming of gay members, but
+        it's a bit dicier with respecting trans identities. They'll recognize it but only after gender-affirming
+        surgery.</p>
+      <p>I feel that my world has grown more by having a community of people I can actually turn to instead of just
+        people on the other side of a screen (as much as I love all my long-distance friends). Come the new year, if I'm
+        still going, I'll have to become a member and look for a place to convert, since our congregation can't really
+        handle those at the moment. What's even better is that one of the temple regulars helped found our county's
+        interfaith alliance. There is genuine good coming from this small group of Georgia Jews, and it is healing. I
+        have to give back in my way and help repair the world.</p>
+
+      <h3 id="politics">The Politics</h3>
+      <p>This year has been deeply painful on many fronts. With Israel's continued bombardment of Palestine and Lebanon,
+        the anti-incumbent wave pushing out democrats for authoritarian right-wing governments across Europe and
+        America, and the brutal, soul-crushing hate expressed towards transgender Americans like myself, my mental
+        health as suffered heavily. I can't think about starting HRT without worrying about providers and doctors being
+        reliable or finding housing or anything else. It's an all-encompassing terror, and I'm stuck in it.</p>
+      <p>While I have <a href="../politics/anti-trans-1.html">written</a> about these feelings and the need to carry on
+        despite them, I haven't really gotten across how fucking weird everything feels now. Nothing feels right.
+        Everyone's insane about drones in New Jersey until they aren't. Matt Gaetz can get called out for prostitution
+        and illicit drug use and face no consequences, besides not being in the House, and he may be acting Senator for
+        Florida in a few months anyways. Everyone is willing to believe in conspiracy theories at the drop of a hat,
+        like how my mom thought it was "convenient" that Hurricanes Helene and Milton "hit red states right before an
+        election."</p>
+      <p>We're speeding headlong into an anti-intellectual dark age &ndash; a time of dumber, more hateful people
+        running society. We must keep our heads and our hearts about ourselves, despite all attempts the wrest them from
+        us. I won't pretend to be holier than thou, though. I'm a spiteful girl, and the curses I've thrown at every
+        conservative politician may fit inside Job. Our humanity is going to get us through this, the good and the ugly.
+        Don't lose hold of yourself or your loved ones. We will persist. If transgender people go extinct, it will be
+        with humanity's broader extinction.</p>
+      <p>Speaking of, we are running even more out of time on addressing the climate crisis. With conservatives taking
+        over lots of governments, we may be out of time to prevent the absolute worst of it all. That doesn't mean the
+        people in charge should be given a moment of rest though. Even if we're fucked, at least make the ruling class
+        miserable.</p>
+
+      <h4 id="mangione">Mangione</h4>
+      <p>I've done my best to avoid reading or following up with the United Healthcare's alleged shooter, Luigi
+        Mangione. The mass focus on the man has turned the crazy up on so many people I know that it feels like
+        derangement. They are incapable of being normal about him. Everyone assumes he did it; I have <em>barely</em>
+        heard the word "alleged" during discussions about him. People are either taking all the police evidence
+        completely seriously or saying this is all a setup. Leftists are for some reason making him out to be a working
+        class champion.</p>
+      <p>The boring answer is to say this is an expression of mass lower-class anger towards the upper class finally
+        exploding. I don't even think it's that wrong either. People <em>hate</em> healthcare companies and CEOs. They
+        deserve all the hate that they get too. Their petulant whining to the New York state and city governments is
+        pathetic, and Mayor Eric "I love Turks" Adams and Governor Kathy "I'm not a Cuomo I swear" Hochul bending over
+        backyards to soothe the fears of these poor, sad multimillionaire losers is worthy of all the mockery it's
+        gotten. I have absolutely no sympathy towards Brian Thompson, but I do feel slightly bad for his kids, just
+        because getting your dad murked sucks even if he did deserve it.</p>
+      <p>I am not going to be doing hero worship of Mangione though. First, he's only alleged to be the shooter.
+        Second, I have better things to do with my time rather than attempt to emulate his behavior. The NYPD and feds
+        have been way too weird about him for me to trust them whatsoever, and I would not complain if he got found
+        guilty via jury nullification or a violation of his rights as an accused. I just want people to stop being so
+        damn weird about it.</p>
+
+      <h2 id="to-2025">The Road Goes Ever On and On</h2>
+      <p>Going into 2025, I am more anxious than anything. I am not looking forward to the next Trump administration, or
+        the persecution of my friends and loved ones for no reason, or the further enshittification of everything. Hell,
+        I asked for some clothes this Christmas and the ones I got just feel like worse quality than what I had just as
+        a teenager. It's enraging, and things only look like they're going to get worse. The climate, international
+        chaos, domestic strife, a lack of cultural anchors in mass media, and further anti-intellectual behaviors are
+        all going to get worse.</p>
+      <p>Even on the home front, I have to worry about healthcare (including normal healthcare and gender-affirming
+        care), housing, a new job at some point, possibly further education, and so much else. But I've done things this
+        year and can continue next year. I can go deeper into Judaism. I can learn more about Linux, networking, and
+        system administration. I can DIY my HRT. I can find a way through this despite my fears and the obstacles
+        arrayed against us. I do not intend to die in this state. I intend to die fulfilled and thriving, having given
+        as much to the world as I can. I will leave it better than I found it.</p>
+      <p>I'm going to get out there and volunteer next year. I've sat on my hands too long. It's past time for me to
+        help repair the world.</p>
+    </main>
+
+    <footer>
+      <p>This site was styled with <a href="https://catppuccin.com">Catppuccin Macchiato!</a></p>
+      <ul>
+        <li><img src="../images/neocities_vaporwave_stamp.gif" alt="Neocities"></li>
+        <li><img src="../images/linux_mint.gif" alt="Linux Mint"></li>
+        <li><img src="../images/neovim.gif" alt="Neovim"></li>
+        <li><img src="../images/transnow2.gif" alt="Trans Rights Now!"></li>
+        <li><img src="../images/webpassion.gif" alt="Web Design Is My Passion"></li>
+      </ul>
+    </footer>
+
+  </body>
+</html>
