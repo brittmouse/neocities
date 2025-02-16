@@ -71,7 +71,8 @@ main h4 {
   font-style: italic;
 }
 
-main>time {
+main>time,
+article>time {
   text-align: center;
   margin-bottom: 0.75em;
   font-style: oblique;
